@@ -1,6 +1,7 @@
 # Minecraft Plugins
 
-Paper plugin development server for Minecraft Java Edition 26.2.
+A single Paper plugin containing multiple independently organized features for
+Minecraft Java Edition 26.2.
 
 ## Requirements
 
@@ -26,3 +27,11 @@ Connect from Minecraft using the server address `localhost`.
 ```
 
 The plugin JAR is written to `build/libs`.
+
+## Adding a feature
+
+Each event-based feature is a class in
+`src/main/java/dev/whileloop/minecraftplugins/features` that implements
+Paper's `Listener` interface. Add an instance of the class to the `features`
+list in `MinecraftPlugins.java`. The single `runServer` task builds and loads
+all listed features as one plugin JAR.
